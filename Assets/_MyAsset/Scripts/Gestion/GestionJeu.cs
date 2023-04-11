@@ -52,6 +52,15 @@ public class GestionJeu : MonoBehaviour
         _tableauTemps[_noNiveau] = Time.time;
         _noNiveau++;
     }
+    public void setTempsFinal()
+    {
+        _tableauTemps[3] += Time.time - _tableauTemps[(_noNiveau-1)];  
+    }
+
+    public void setTempsTotal()
+    {
+        _tableauTemps[4] = _tableauTemps[3] + _pointage;
+    }
 
     public int GetPoint()
     {

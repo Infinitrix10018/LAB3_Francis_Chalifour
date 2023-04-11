@@ -52,10 +52,10 @@ public class FinDeJeu : MonoBehaviour
                 // si au dernier niveau
                 if (noScene == (SceneManager.sceneCountInBuildSettings -2)) 
                 {
-                    //fait faire le compte des points et du temps
+                //fait faire le compte des points et du temps
 
-                    //_gestionJeu.setPoinage(noScene);
-
+                //_gestionJeu.setPoinage(noScene);
+                _gestionJeu.setTempsFinal();
                     //fini la partie
                     //_fin = true; 
                     //Fait que le joueur est désactivé
