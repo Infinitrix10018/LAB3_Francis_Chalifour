@@ -9,9 +9,11 @@ public class GestionJeu : MonoBehaviour
     public float[] _tableauTemps = new float[5];
     //variable qui permet d'enregistrer le nombre de point
     private int _pointage;
-    private float _tempsDebut;
+    private float _tempsDebutJeu;
     private UIManager _UIManager;
     private int _noNiveau;
+    private float _tempsDebut;
+    private float _tempsReel;
 
 
     private void Awake()
@@ -33,7 +35,7 @@ public class GestionJeu : MonoBehaviour
         _UIManager = FindObjectOfType<UIManager>();
         // initialise le pointage a zero
         _pointage = 0;
-        _tempsDebut = Time.time;
+        _tempsDebutJeu = Time.time;
 
         //appelle la fonction InstructionDepart()
         //InstructionsDepart();
@@ -46,22 +48,42 @@ public class GestionJeu : MonoBehaviour
         _UIManager.ChangerPointage(_pointage);
     }
 
+    public void setTempsDebut()
+    {
+        _tempsDebut = Time.time;
+    }
+    public void setTempstotal()
+    {
+        _tempsReel += Time.time - _tempsDebut;
+    }
+    public float getTempsDebut()
+    {
+        return _tempsDebut;
+    }
+    public float getTempstotal()
+    {
+        return _tempsReel;
+    }
+
+
+
     //fonction qui permet d'enregistrer les point, le temps et le temps total a la fin d'un niveau
     public void setTemps()
     {
         _tableauTemps[_noNiveau] = Time.time;
+        setTempsFinal();
         _noNiveau++;
     }
     public void setTempsFinal()
     {
-        _tableauTemps[3] += Time.time - _tableauTemps[(_noNiveau-1)];  
+        _tableauTemps[3] += Time.time - _tableauTemps[_noNiveau];
     }
 
-    public void setTempsTotal()
+ /*   public void setTempsTotal()
     {
         _tableauTemps[4] = _tableauTemps[3] + _pointage;
     }
-
+ */
     public int GetPoint()
     {
         return _pointage;
@@ -69,7 +91,7 @@ public class GestionJeu : MonoBehaviour
 
     public float GetTempsDepart()
     {
-        return _tempsDebut;
+        return _tempsDebutJeu;
     }
 
 /*

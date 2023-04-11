@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _menuPause = default;
     private bool _enPause;
     private GestionJeu _gestionJeu;
+    public bool _enJeu = false;
 
 
     void Start()
@@ -52,5 +53,23 @@ public class UIManager : MonoBehaviour
         _menuPause.SetActive(false);
         Time.timeScale = 1;
         _enPause = false;
+    }
+
+
+
+    public void GestionTemps()
+    {
+        if(_enJeu)
+        {
+            float temps = Time.time - _gestionJeu.getTempsDebut();
+            _txtTemps.text = "Temps : " + temps.ToString("f2");
+
+        }
+        else
+        {
+            float temps = Time.time - _gestionJeu.getTempstotal();
+            _txtTemps.text = "Temps : " + temps.ToString("f2");
+
+        }
     }
 }

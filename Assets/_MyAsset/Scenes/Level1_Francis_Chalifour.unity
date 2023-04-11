@@ -1653,6 +1653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576b310200c6b854e95bdc6f5258ec44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tableauTemps:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!4 &802276313
 Transform:
   m_ObjectHideFlags: 0
@@ -2022,10 +2028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6c006213e12654685ea4cb07d21a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fin: 0
-  _txtTemps: {fileID: 0}
-  _txtAccrochage: {fileID: 0}
-  _txtTempsFinal: {fileID: 0}
 --- !u!1001 &1246136131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3142,15 +3144,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907874156715253280, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 697.31537
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6907874156715253280, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 436.6661
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6907874156715253280, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1286.8209
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6907874156715253280, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3183,6 +3185,18 @@ PrefabInstance:
     - target: {fileID: 6907874156715253283, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
       propertyPath: m_Name
       value: UIJeu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907874157381162742, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907874157381162742, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907874157381162742, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b78fcf8e4f54c6479ec4bb2a5d6c89f, type: 3}

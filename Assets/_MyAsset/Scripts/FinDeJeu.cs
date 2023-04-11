@@ -12,6 +12,7 @@ public class FinDeJeu : MonoBehaviour
     //Importation des variable pour Player et GestionJeu
     private Player _player;
     private GestionJeu _gestionJeu;
+    private UIManager _UIManager;
 
     //[SerializeField] private TMP_Text _txtTemps = default;
     //[SerializeField] private TMP_Text _txtAccrochage = default;
@@ -25,6 +26,7 @@ public class FinDeJeu : MonoBehaviour
         //initiallisation des variable pour Player et GestionJeu
         _gestionJeu = FindObjectOfType<GestionJeu>(); 
         _player = FindObjectOfType<Player>();
+        _UIManager = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -42,8 +44,9 @@ public class FinDeJeu : MonoBehaviour
         
         //Gestion de la fin du jeu
             if (collision.gameObject.tag == "Player")
-            {Debug.Log("toucher");
-               
+            {
+            _gestionJeu.setTempstotal();
+            _UIManager._enJeu = false;
                 // récupére l'index de la scene
                 int noScene = SceneManager.GetActiveScene().buildIndex;
                 //récupére l'idex de la dernière scène

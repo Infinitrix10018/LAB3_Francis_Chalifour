@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     //importation du rigidBody
     private Rigidbody _rb;
     private GestionJeu _gestionJeu;
+    private UIManager _UIManager;
 
     private bool _debutTemps = false;
 
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
         //initialisation du rigidBody
         _rb = GetComponent<Rigidbody>();
         _gestionJeu = FindObjectOfType<GestionJeu>();
+        _UIManager = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,8 @@ public class Player : MonoBehaviour
                {
                 if(positionX != 0f | positionZ != 0f)
                 {
-                _gestionJeu.setTemps();
+                _gestionJeu.setTempsDebut();
+                _UIManager._enJeu = true;
                 _debutTemps = true;
                 }
             }
