@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Player : MonoBehaviour
 
     //importation du rigidBody
     private Rigidbody _rb;
+    private GestionJeu _gestionJeu;
+
+    private bool _debutTemps = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +22,7 @@ public class Player : MonoBehaviour
 
         //initialisation du rigidBody
         _rb = GetComponent<Rigidbody>();
+        _gestionJeu = FindObjectOfType<GestionJeu>();
     }
 
     // Update is called once per frame
@@ -29,12 +34,23 @@ public class Player : MonoBehaviour
 
     private void MouvementJoueur()
     {
+       
+
             //avoir les positions verticals et horizontal
             float positionX = Input.GetAxis("Horizontal");
             float positionZ = Input.GetAxis("Vertical");
             // faire que la direction soit celle des coordonn�es donn� ci-dessus
             Vector3 direction = new Vector3(-positionX, 0f, -positionZ); // le mouvement �tait invers�, probablement un probl�me avec probuilder.
             //mouvement du joueur
+            if(!_debutTemps)
+               {
+                if(positionX != 0f | positionZ != 0f)
+                {
+                _gestionJeu.setTemps();
+                _debutTemps = true;
+                }
+            }
+
             _rb.velocity = direction * Time.fixedDeltaTime * _vitesse;
             //normalisation du mouvement, potentiellement* � enlev�
             direction.Normalize();

@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FinDeJeu : MonoBehaviour
 {
     //variable qui indique si c'est la fin de la partie
-    public bool _fin;
+    //public bool _fin;
 
     //Importation des variable pour Player et GestionJeu
     private Player _player;
     private GestionJeu _gestionJeu;
+
+    //[SerializeField] private TMP_Text _txtTemps = default;
+    //[SerializeField] private TMP_Text _txtAccrochage = default;
+    //[SerializeField] private TMP_Text _txtTempsFinal = default;
 
 
 
@@ -34,9 +39,10 @@ public class FinDeJeu : MonoBehaviour
 
         private void OnCollisionEnter(Collision collision)
         {
+        
         //Gestion de la fin du jeu
-            if (collision.gameObject.tag == "Player" && !_fin)
-            {
+            if (collision.gameObject.tag == "Player")
+            {Debug.Log("toucher");
                
                 // récupére l'index de la scene
                 int noScene = SceneManager.GetActiveScene().buildIndex;
@@ -44,28 +50,25 @@ public class FinDeJeu : MonoBehaviour
                 int noSceneFinale = SceneManager.sceneCountInBuildSettings;
           
                 // si au dernier niveau
-                if (noScene == (SceneManager.sceneCountInBuildSettings -1)) 
+                if (noScene == (SceneManager.sceneCountInBuildSettings -2)) 
                 {
                     //fait faire le compte des points et du temps
-                    _gestionJeu.setPoinage(noScene);
 
-                    // Le messagew de fin avec le temps, le pointage et le temps total pour chaque niveau et le niveau final
-                    Debug.Log("Bravo! Vous avez reussi!");
-                    Debug.Log("Pour finir le premier niveau vous avez pris " + _gestionJeu._tableauPoint[0,0] + " secondes et vous avez accrocher " + _gestionJeu._tableauPoint[0, 1] + " obstacle(s), pour un temps total de " + _gestionJeu._tableauPoint[0, 2] + "secondes");
-                    Debug.Log("Pour finir le deuxième niveau vous avez pris " + _gestionJeu._tableauPoint[1, 0] + " secondes et vous avez accrocher " + _gestionJeu._tableauPoint[1, 1] + " obstacle(s), pour un temps total de " + _gestionJeu._tableauPoint[1, 2] + "secondes");
-                    Debug.Log("Pour finir le troisième niveau vous avez pris " + _gestionJeu._tableauPoint[2, 0] + " secondes et vous avez accrocher " + _gestionJeu._tableauPoint[2, 1] + " obstacle(s), pour un temps total de " + _gestionJeu._tableauPoint[2, 2] + "secondes");
-                    Debug.Log("Pour finir le jeu vous avez pris " + _gestionJeu._tableauPoint[3, 0] + " secondes et vous avez accrocher " + _gestionJeu._tableauPoint[3, 1] + " obstacle(s), pour un temps total de " + _gestionJeu._tableauPoint[3, 2] + "secondes");
-
+                    //_gestionJeu.setPoinage(noScene);
 
                     //fini la partie
-                    _fin = true; 
+                    //_fin = true; 
                     //Fait que le joueur est désactivé
                     _player.finPartieJoueur();
+                    //aller à la dernière scene
+                    SceneManager.LoadScene(noScene + 1);
                 }
                 else
                 {
                     //fait faire le calcul du pointage
-                    _gestionJeu.setPoinage(noScene);
+
+                    //_gestionJeu.setPoinage(noScene);
+
                     //Change la scene à la suivante
                     SceneManager.LoadScene(noScene + 1);
                 }

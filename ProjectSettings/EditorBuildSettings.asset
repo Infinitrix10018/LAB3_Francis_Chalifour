@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_MyAsset/Scenes/Start.unity
+    guid: 13640145c58389f439ece7759d82e9ab
+  - enabled: 1
     path: Assets/_MyAsset/Scenes/Level1_Francis_Chalifour.unity
     guid: e87afe9828cad2e46aee89635ddfccc2
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_MyAsset/Scenes/Level3_Francis_Chalifour.unity
     guid: ae0fd7395e744e04da173f72d7b4ff40
+  - enabled: 1
+    path: Assets/_MyAsset/Scenes/End.unity
+    guid: 8c6b0ec38bbbe40458d04b6f0321e87b
   m_configObjects: {}
