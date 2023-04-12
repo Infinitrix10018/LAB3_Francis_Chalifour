@@ -15,10 +15,15 @@ public class AffichageFinal : MonoBehaviour
     void Start()
     {
         _gestionJeu = FindObjectOfType<GestionJeu>();
+        float tempsFinal;
+        float temps;
+        temps = Time.time - _gestionJeu.GetTempsDepart();
+        
+        tempsFinal = temps + _gestionJeu.GetPoint();
 
-        _txtTemps.text = "Temps : " + _gestionJeu._tableauTemps[3].ToString("f2");
+        _txtTemps.text = "Temps : " + temps.ToString("f2");
         _txtAccrochage.text = "Accrochage : " + _gestionJeu.GetPoint().ToString("f2");
-        _txtTempsFinal.text = "Temps total : " + _gestionJeu._tableauTemps[4].ToString("f2");
+        _txtTempsFinal.text = "Temps total : " + tempsFinal.ToString("f2");
     }
 
 }

@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Reprise du jeu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6dd7c4342948cdd40b8720e1592d0b67, type: 2}
   m_sharedMaterial: {fileID: 5641820231170845343, guid: 6dd7c4342948cdd40b8720e1592d0b67, type: 2}
@@ -1188,6 +1188,7 @@ MonoBehaviour:
   _txtAccrochages: {fileID: 6907874157365439213}
   _txtTemps: {fileID: 6907874156746943634}
   _menuPause: {fileID: 6907874156592736765}
+  _enJeu: 0
 --- !u!114 &336154284497278517
 MonoBehaviour:
   m_ObjectHideFlags: 0
